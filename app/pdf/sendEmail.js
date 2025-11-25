@@ -64,4 +64,4 @@ export async function sendEmail({ to, subject, message, pdfUrl }) {
     return { ok: false, error: err.message };
   }
 }
-export default sendEmail;
+export { sendEmail as default };
