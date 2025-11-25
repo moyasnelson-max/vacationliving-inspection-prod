@@ -1,10 +1,10 @@
 // /app/pdf/uploadToSupabase.js
-import { createClient } from '@/app/pdf/uploadToSupabase';
+import { createClient } from '@supabase/supabase-js';
 
 /**
  * Uploads a PDF Blob to Supabase Storage in the "reports" bucket.
  * The folder structure becomes:
- *    reports/{propertyId}/{timestamp}.pdf
+ *    reports/{propertyId}/inspection-{timestamp}.pdf
  */
 
 export async function uploadToSupabase({ pdfBlob, propertyId }) {
@@ -30,7 +30,7 @@ export async function uploadToSupabase({ pdfBlob, propertyId }) {
 
     if (error) throw error;
 
-    // Public URL
+    // Generate Public URL
     const { data: publicData } = supabase.storage
       .from('reports')
       .getPublicUrl(filePath);
@@ -42,6 +42,9 @@ export async function uploadToSupabase({ pdfBlob, propertyId }) {
     };
 
   } catch (err) {
-    return { ok: false, error: err.message };
+    return {
+      ok: false,
+      error: err.message,
+    };
   }
 }
