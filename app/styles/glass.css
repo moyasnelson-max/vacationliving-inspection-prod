@@ -1,0 +1,123 @@
+/* ===== GLOBAL LAYOUT ===== */
+.login-container {
+  position: fixed;
+  inset: 0;
+  background: url("/background.webp") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(12px) brightness(0.85);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== LOGIN CARD ===== */
+.login-card {
+  position: relative;
+  width: 380px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+/* ===== LOGO ===== */
+.login-logo {
+  width: 160px;
+  margin-bottom: 20px;
+}
+
+/* ===== TEXTS ===== */
+.login-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.login-subtitle {
+  font-size: 15px;
+  margin-bottom: 24px;
+  color: #444;
+}
+
+/* ===== FORM ===== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.login-input {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  outline: none;
+  transition: 0.25s;
+}
+
+.login-input:focus {
+  border-color: #c5a26e;
+  box-shadow: 0 0 0 3px rgba(197, 162, 110, 0.25);
+}
+
+/* ===== BUTTON ===== */
+.login-btn {
+  padding: 14px;
+  background: linear-gradient(135deg, #c6a167, #e0c28f);
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #b89252, #d6b47e);
+}
+
+.login-btn:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ===== ERROR TEXT ===== */
+.login-error {
+  margin-top: 4px;
+  color: #c0392b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}=====================================================
+   ANIMATIONS
+============================================================ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.glass-login-container {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+}

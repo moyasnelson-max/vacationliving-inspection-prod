@@ -1,0 +1,20 @@
+{
+  "name": "Vacation Living · Inspection App",
+  "short_name": "VL Inspection",
+  "description": "Luxury-grade inspection system for Vacation Living. Real-time reports, issue tracking, media uploads and weekly summaries.",
+  "lang": "en",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#E8D9BC",
+  "background_color": "#F6F0E3",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}

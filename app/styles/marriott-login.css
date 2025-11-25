@@ -1,0 +1,160 @@
+/* ===========================================================
+   MARRIOTT LUXURY LOGIN STYLE
+   Only affects /login page
+   =========================================================== */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Background image */
+.lux-container {
+  position: fixed;
+  inset: 0;
+  background: url("/background.webp") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Blur overlay */
+.lux-overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(16px);
+  background: linear-gradient(
+    to bottom right,
+    rgba(255,255,255,0.45),
+    rgba(240,230,220,0.45)
+  );
+}
+
+/* Card */
+.lux-card {
+  position: relative;
+  width: 92%;
+  max-width: 420px;
+  padding: 40px 32px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.60);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  backdrop-filter: blur(20px);
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Logo */
+.lux-logo {
+  width: 110px;
+  margin: 0 auto 18px;
+  display: block;
+}
+
+/* Titles */
+.lux-title {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.lux-subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: #4a4a4a;
+  margin-bottom: 30px;
+}
+
+/* Inputs */
+.lux-input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(160, 140, 120, 0.45);
+  background: rgba(255,255,255,0.75);
+  font-size: 16px;
+  outline: none;
+  transition: 0.25s;
+}
+
+.lux-input:focus {
+  border-color: #b59772;
+  box-shadow: 0 0 0 3px rgba(181,151,114,0.25);
+}
+
+/* Password wrapper */
+.lux-pass-wrapper {
+  position: relative;
+}
+
+.lux-toggle-pass {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #7a6043;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Button */
+.lux-button {
+  width: 100%;
+  margin-top: 6px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: #b59772;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.lux-button:hover {
+  background: #a68661;
+  transform: translateY(-1px);
+}
+
+/* Forgot password link */
+.lux-forgot {
+  margin-top: 14px;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  color: #806748;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* Error text */
+.lux-error {
+  color: #c62828;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
