@@ -1,5 +1,5 @@
 // /app/pdf/uploadToSupabase.js
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@/app/pdf/uploadToSupabase';
 
 /**
  * Uploads a PDF Blob to Supabase Storage in the "reports" bucket.
