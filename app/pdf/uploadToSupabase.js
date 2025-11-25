@@ -48,3 +48,4 @@ export async function uploadToSupabase({ pdfBlob, propertyId }) {
     };
   }
 }
+export { uploadToSupabase as default };
