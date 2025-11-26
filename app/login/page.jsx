@@ -1,8 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { createIssue } from "@/app/issues/createIssue";
+import { createClient } from "@supabase/supabase-js";
 import "../styles/marriott-login.css";
+
+// Create Supabase client for browser
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+);
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -27,7 +33,8 @@ export default function LoginPage() {
       return;
     }
 
-    window.location.href = "/reports"; // REDIRECCIÓN
+    // REDIRECT
+    window.location.href = "/reports";
   };
 
   const handleReset = async () => {
@@ -50,18 +57,12 @@ export default function LoginPage() {
       <div className="lux-overlay"></div>
 
       <div className="lux-card">
-        {/* LOGO */}
-        <img
-          src="/logo.png"
-          alt="Vacation Living Logo"
-          className="lux-logo"
-        />
+        <img src="/logo.png" alt="Vacation Living Logo" className="lux-logo" />
 
         <h2 className="lux-title">Vacation Living</h2>
         <p className="lux-subtitle">Inspector Access</p>
 
         <form onSubmit={handleLogin} className="lux-form">
-          {/* EMAIL */}
           <input
             className="lux-input"
             type="email"
@@ -70,7 +71,6 @@ export default function LoginPage() {
             onChange={(e) => setEmail(e.target.value)}
           />
 
-          {/* PASSWORD + TOGGLE */}
           <div className="lux-pass-wrapper">
             <input
               className="lux-input"
@@ -89,16 +89,13 @@ export default function LoginPage() {
             </button>
           </div>
 
-          {/* ERROR */}
           {error && <p className="lux-error">{error}</p>}
 
-          {/* LOGIN BUTTON */}
           <button className="lux-button" type="submit" disabled={loading}>
             {loading ? "Signing in..." : "Login"}
           </button>
         </form>
 
-        {/* Forgot Password */}
         <button className="lux-forgot" onClick={handleReset}>
           Forgot Password?
         </button>
